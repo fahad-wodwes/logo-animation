@@ -1,0 +1,218 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    background-color: black;
+}
+
+.flex {
+    display: flex;
+}
+
+.text-red {
+    color: red;
+}
+
+.text-white {
+    color: white;
+}
+
+.text-blue {
+    color: blue;
+}
+
+.re-text {
+    font-size: 72px;
+    margin: 0;
+}
+
+.stage {
+    height: 100px;
+    margin-top: 16px;
+    position: relative;
+    width: 100%;
+    z-index: -1;
+}
+
+.cubespinner {
+    animation-name: spincube;
+    animation-timing-function: ease;
+    animation-duration: 4s;
+    transform-style: preserve-3d;
+    transform-origin: 40px 40px 0;
+    animation-fill-mode: forwards;
+    /* animation-iteration-count: infinite; */
+}
+
+.cubespinner div {
+    position: absolute;
+    width: 400px;
+    height: 80px;
+    text-align: left;
+    font-size: 74px;
+    font-weight: 700;
+    background-color: black;
+}
+
+.cubespinner .text1 {
+    transform: translateZ(40px);
+}
+
+.cubespinner .text2 {
+    transform: rotateX(90deg) translateZ(40px);
+}
+
+.cubespinner .text3 {
+    transform: rotateX(180deg) translateZ(40px);
+}
+
+.cubespinner .text4 {
+    transform: rotateX(270deg) translateZ(40px);
+}
+
+@keyframes spincube {
+
+    0%,
+    25% {
+        transform: rotateX(0deg);
+    }
+
+    50% {
+        transform: rotateX(90deg);
+    }
+
+    75% {
+        transform: rotateX(180deg);
+    }
+
+    100% {
+        transform: rotateX(270deg);
+    }
+}
+
+
+.top-bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -1rem;
+    max-width: 520px;
+    background-color: black;
+    z-index: 999;
+    width: 100%;
+    max-width: 372px;
+
+}
+
+.top-bar-mask {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -1rem;
+    max-width: 520px;
+    background-color: black;
+    z-index: 9999;
+    width: 0;
+    height: 40px;
+    animation: expandBar 5s forwards;
+
+}
+
+.bottom-bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1rem;
+    max-width: 520px;
+    background-color: black;
+    z-index: 999;
+    width: 100%;
+    max-width: 372px;
+}
+
+.bottom-bar-mask {
+    position: absolute;
+    right: 0;
+    bottom: -1rem;
+    max-width: 520px;
+    background-color: black;
+    z-index: 9999;
+    width: 0;
+    height: 40px;
+    animation: expandBar 5s forwards;
+}
+
+/* New keyframes for bottom-bar expansion */
+@keyframes expandBar {
+
+    0%,
+    25% {
+        width: 100%;
+    }
+
+    50% {
+        width: 100%;
+    }
+
+    75% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0;
+    }
+}
+
+.right-buttons button {
+    border: 1px solid white;
+    padding: 8px 16px;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+        background-color: white;
+        color: black;
+    }
+}
+
+
+/* slide animation */
+
+.slide-in-left {
+    animation: slide-in-left 5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-left {
+    0% {
+        -webkit-transform: translateX(-64px);
+        transform: translateX(-64px);
+        opacity: 0;
+    }
+
+    25% {
+        -webkit-transform: translateX(-64px);
+        transform: translateX(-64px);
+        opacity: 0;
+    }
+
+    50% {
+        -webkit-transform: translateX(-64px);
+        transform: translateX(-64px);
+        opacity: 0;
+    }
+
+    75% {
+        -webkit-transform: translateX(-64px);
+        transform: translateX(-64px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
